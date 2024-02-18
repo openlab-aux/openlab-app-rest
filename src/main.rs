@@ -5,6 +5,7 @@ use actix_web::{
 };
 use chrono::Duration;
 use chrono::{DateTime, Local, NaiveDate, NaiveDateTime, NaiveTime, TimeZone, Utc};
+use env_logger::Env;
 use serde::Deserialize;
 use serde::Serialize;
 use std::clone::Clone;
@@ -160,6 +161,7 @@ async fn main() -> std::io::Result<()> {
         presence: Mutex::new(HashMap::new()),
         coming: Mutex::new(HashMap::new()),
     });
+    env_logger::init_from_env(Env::default().default_filter_or("info"));
     HttpServer::new(move || {
         let cors = Cors::default()
             .supports_credentials()
