@@ -1,9 +1,7 @@
 name: Push to Dockerhub
 on: 
   push:
-    branches: [ main ]
-  schedule:
-    - cron: '0 0 * * *'
+    branches: [ master ]
 jobs:
   push-to-dockerhub:
     runs-on: ubuntu-latest
