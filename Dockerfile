@@ -1,5 +1,5 @@
-FROM	rust	as	build
 	
+FROM	rust	as	builder
 ENV	PKG_CONFIG_ALLOW_CROSS	1
 WORKDIR	/usr/src/openlab-rest
 COPY	.	.
