@@ -5,5 +5,5 @@ COPY	.	.
 RUN	cargo install --path .
 
 FROM	debian
-COPY	/usr/local/cargo/bin/openlab-rest	/usr/local/bin/openlab-rest
+COPY	--from=builder /usr/local/cargo/bin/openlab-rest	/usr/local/bin/openlab-rest
 CMD	["openlab-rest"]
