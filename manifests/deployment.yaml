@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: openlab-rest
+  name: openlab-rest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openlab-rest
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: openlab-rest
+    spec:
+      containers:
+      - image: ghcr.io/openlab-aux/openlab-app-rest:latest
+        name: openlab-app-rest
+status: {}
